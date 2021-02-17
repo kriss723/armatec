@@ -789,7 +789,7 @@ footer .footer-redes a:hover{
        width: 100%;
        display: block;
        position: fixed; /*rompa el flujo del elemento*/
-       top: 83px;
+       top: 63px;
        left: -100%; /*para esconderlo*/
        background:#bd8e03;
        border-bottom: 1px solid rgba(204,204,204,0.5);
