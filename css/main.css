@@ -1,0 +1,941 @@
+/*GENERALES*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1080px;
+    margin: 0 auto; /*centrar el contenido*/
+}
+
+.titulo-seccion{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-seccion h2{
+    color: #ffbf06;
+    font-size: 3.125rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.titulo-seccion p{
+    color: #979797;
+    font-size: 1.23rem;
+    font-weight: 500;
+}
+/*///////////Boton Volver arriba///////////////////*/
+
+.btnVolverArriba{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #114660;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 150;
+    border-radius: 30%;
+    margin-right: -60px;
+    box-shadow: 0px 9px 35px -1px rgba(0,0,0,0.6);
+}
+
+.btnVolverArriba a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    text-align: center;
+}
+
+.btnVolverArriba a i{
+    font-size: 1rem;
+    color:#bd8e03;
+    line-height: 40px;
+}
+
+/*///////////Boton WhatsApp///////////////////*/
+
+.btnWhatsApp{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #29eb10;
+    position: fixed;
+    bottom: 20px;
+    right: 130px;
+    z-index: 150;
+    border-radius: 30%;
+    margin-right: -60px;
+    box-shadow: 0px 9px 35px -1px rgba(0,0,0,0.6);
+}
+
+.btnWhatsApp a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    text-align: center;
+}
+
+.btnWhatsApp a i{
+    font-size: 1rem;
+    color:#fafafa;
+    line-height: 40px;
+}
+
+/*//////////////////////Encabezado///////////////////*/
+
+.bar-menu-pc{
+    width: 100%;
+    min-height: 68px;
+    border-bottom: 1px solid rgba(255,255,255, 0.15);
+    padding: 0 36px;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* poder aplicar el z-index*/
+    z-index: 100;
+    top: 0;
+}
+
+.logo{
+    display: inline-block;
+    width: 68px;
+}
+
+.logo img{
+    width: 100%;
+    vertical-align: top; /* se le quita el espacio creado abajo*/
+}
+
+.bar-menu-pc a, .top-redes a{
+    display: inline-block;
+    padding: 0 10px;
+    color: #ffbf06;
+    text-decoration: none;
+    font-weight: 700;
+    font-size:1rem;
+    letter-spacing: 0;
+    line-height: 1.5rem;
+    transition: all .3s ease;
+}
+
+/*quitar el paddin a los ultimos elementos que no dejan centrarlo*/
+.bar-menu-pc a:last-child, .top-redes a:last-child{
+    padding-left: 0;
+}
+
+.top-redes a:first-child{
+    padding-right: 0;
+}
+
+.bar-menu-pc .top-redes a i{
+    color: #ffbf06;
+}
+
+.top-redes a i{
+    font-size: 1.5rem;
+}
+
+.bar-menu-pc a:hover, .top-redes a:hover{
+    color: #0089E0;
+}
+
+.fixed-header{
+    width: 100%;
+    min-height: 68px;
+    border-bottom: 1px solid rgba(204,204,204,0.15);
+    padding: 0 36px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    transition: all .4s ease;
+    margin-top: -78px; /*luego con javascript lo ajustamos para que baje*/
+}
+
+.fixed-header .menu-principal a, .top-redes a{
+    color: #114660;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    padding: 0 10px;
+    text-decoration: none;
+    font-size:1rem;
+    letter-spacing: 0;
+    line-height: 1.5rem;
+    transition: all .6s ease;
+}
+
+.fixed-header .menu-principal a:hover, .top-redes a:hover{
+    color: #0089E0;
+}
+
+
+/*menu movil*/
+.menu-movil{
+    display: none;
+}
+
+/*-------main--------*/
+/*---Banner principal---*/
+
+.main{
+    width: 100%;
+    margin-top: -68px;
+}
+
+.main .banner-principal{
+    width: 100%;
+    position: relative;/* se usa al padre como referencia*/
+}
+
+.main #particles-js {
+    z-index: 8;
+    position: inherit;
+     height: 90%;
+  }
+
+.main .banner-principal .banner{
+    width: 100%;
+    /*height: 100vh; Altura se va a realizar con JS*/
+    background-image: url('../img/banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* efecto parallax*/
+    
+}
+
+.main .banner-principal .texto-banner{
+    display: inline-block;
+    width: 90%;/*dispositivos moviles no se pegue*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 999;
+}
+
+.main .banner-principal .texto-banner h2{
+    font-weight: 600;
+    color:  #0089E0;
+    margin-bottom: 20px;
+}
+
+.main .banner-principal .texto-banner h1{
+    font-size: 8.0625rem;
+    font-weight: 700;
+    line-height: 90px;
+    color: #ffbf06;
+    margin-bottom: 30px;
+}
+
+.main .banner-principal .texto-banner a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: black;
+    color: #fff;
+    transition: all .7s ease;
+}
+
+.main .banner-principal .texto-banner a:hover{
+    background-color: #fff;
+    color: black;
+}
+
+/*********************************************/
+/*---------------Proyectos-------------------*/
+/*********************************************/
+
+
+.main .proyectos{
+    background: #F3F4FA;
+    padding: 108px 0 54px 0;
+}
+
+.main .proyectos .galeria-proyectos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 34px;
+    border-bottom: 1px solid #ccc;
+}
+
+.main .proyectos .galeria-proyectos .proyecto{
+    width: 32%;
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+/*se ajuste al contenedor la imagen*/
+.main .proyectos .galeria-proyectos .proyecto img{
+    width: 100%;
+    vertical-align: top;
+}
+
+/*********************************************/
+/*---------------Modal-----------------------*/
+/*********************************************/
+
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top:0;
+    left:0;
+    background: rgba(0,0,0,0.8);
+    z-index: 999999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal img{
+    width: 90%;
+    max-width: 600px;
+}
+.modal .btncerrar{
+    position: fixed;
+    width: 48px;
+    height: 48px;
+    top: 20px;
+    right: 20px;
+}
+
+.modal .btncerrar i {
+    color: #bd8e03;
+    font-size: 3rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.modal .btncerrar i:hover {
+    color: #0d9be2;
+}
+/*********************************************/
+/*---------------Acerca de-------------------*/
+/*********************************************/
+
+.main .acerca-de{
+    background: #F3F4FA;
+}
+
+.main .acerca-de .contenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main .acerca-de .contenedor .titulo-seccion{
+    width: 33.33%;
+    text-align: left;
+}
+
+.main .acerca-de .contenedor .titulo-seccion h2{
+    margin-bottom: 0;
+}
+
+.main .acerca-de .texto-acerca-de{
+    width: 66.66% ;
+    text-align: left;
+}
+
+.main .acerca-de .texto-acerca-de p{
+    color: #979797;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/*********************************************/
+/*---------------Slider-------------------*/
+/*********************************************/
+
+.main .contenedor-slider{
+    width: 100%;
+    overflow: hidden;
+    background: #F3F4FA;
+    padding: 54px 0;
+    position: relative; /*tenerlo de referencia para las flechas*/
+}
+
+.main .contenedor-slider .slider{
+    width: 500%;
+    display: flex;
+}
+
+.main .contenedor-slider .slide{
+    width: 15%;
+    max-width: 950px;
+    margin-right: 0.7%;
+    box-shadow: 0px 20px 40px #aaa;
+}
+
+.main .contenedor-slider .slide img{
+    width: 100%;
+    vertical-align: top;/*eliminarl el espacio*/
+}
+
+.main .contenedor-slider .btn-anterior, .main .contenedor-slider .btn-siguiente{
+    display: inline-block;
+    cursor: pointer;
+    position: absolute; /*moverlo en el contenedor padre*/
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.main .contenedor-slider .btn-anterior{
+    left: 2%;
+}
+
+.main .contenedor-slider .btn-siguiente{
+    right: 2%;
+}
+
+.main .contenedor-slider .btn-anterior i, .main .contenedor-slider .btn-siguiente i{
+    color: #114660;
+    font-size: 3rem;
+}
+
+.main .contenedor-slider .btn-anterior i:hover, .main .contenedor-slider .btn-siguiente i:hover{
+    color: #ffbf06;
+    font-size: 3.5rem;
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/*nuestro equipo*/
+
+.main .nuestro-equipo{
+    background: #f3f4fa;
+    padding-top: 54px;
+    padding-bottom: 108px;
+}
+
+.main .nuestro-equipo .equipo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main .nuestro-equipo .equipo .persona-equipo{
+    background: #ffbf06;
+    border: 5px double #0d9be2;
+    padding: 50px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0px 9px 35px -1px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.main .nuestro-equipo .equipo .persona-equipo:first-child{
+    position: relative;
+    top: -20px;
+}
+
+.main .nuestro-equipo .equipo .persona-equipo:last-child{
+  position: relative;
+  top: 20px;
+}
+
+.main .nuestro-equipo .equipo .persona-equipo .foto{
+   width:75%;
+   max-width: 120px;
+   display: inline-block;
+   margin-top: 10px;
+}
+
+.main .nuestro-equipo .equipo .persona-equipo .foto img{
+    width: 100%;
+    border: 1px solid  #aaa;
+    border-radius: 100%;
+}
+
+.main .nuestro-equipo .equipo .persona-equipo .texto h3{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #0089E0;
+}
+
+.main .nuestro-equipo .equipo .persona-equipo .texto h4{
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #979797;
+    margin-bottom: 15px;
+}
+
+.main .nuestro-equipo .equipo .persona-equipo .texto p{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #114660;
+}
+
+/*seccion informacion extra*/
+
+.main .seccion-extra{
+    background-color: #ffbf06;
+    padding: 130px 0;
+}
+
+.main .repuestos{
+    transition: all .3s ease;
+    padding: 10px;
+    border-radius: 3%;
+	box-shadow: 0 2px 4px rgb(0 0 0 / 50%) inset, 0 1px 0 #fff;
+}
+
+.main .seccion-extra .contenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main .seccion-extra .contenedor .info{
+    width: 50%;
+}
+
+.main .seccion-extra .contenedor .info .contenido-info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /*Para que no se coloque uno debajo del otro*/
+    justify-content: center;
+}
+
+.main .seccion-extra .contenedor .info .contenido-info:first-child{
+    margin-bottom: 30px;
+}
+
+.main .seccion-extra .contenedor .info .contenido-info .icono-info{
+    width: 5%;
+}
+
+.main .seccion-extra .contenedor .info .contenido-info .icono-info i{
+    font-size: 1.5rem;
+    color: black;
+}
+
+.main .seccion-extra .contenedor .info .contenido-info .texto-info {
+    margin-left: 3%;
+}
+
+.main .seccion-extra .contenedor .info .contenido-info .texto-info h4{
+    font-size: 1.875rem;
+    line-height: 24px;
+    font-weight: 500px;
+    margin-bottom: 15px;
+}
+
+.main .seccion-extra .contenedor .info .contenido-info .texto-info p{
+    font-size: 1.2rem;
+    line-height: 24px;
+    font-weight: 500px;
+    margin-bottom: 15px;
+    margin-right: 10px;
+    padding-right: 25px;
+    text-align: justify;
+}
+
+.main .seccion-extra .contenedor .foto #despiece{
+    box-shadow: 0px 9px 32px -1px rgba(0,0,0,0.5);
+    transform: translate(30%,10%);
+}
+
+/*********contacto**************/
+
+.main .contacto{
+    padding: 190px 0;
+    
+}
+
+.main .contacto .contenedor .contenedor-formulario{
+    background: #fff;
+    min-height: 485px;
+    border-radius: 3px;
+    box-shadow: 0px 9px 35px -1px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .contacto .contenedor .contenedor-formulario .formulario{
+    width: 50%;
+    padding: 70px;
+}
+
+.main .contacto .contenedor .contenedor-formulario .formulario h2{
+    font-size: 2rem;
+    line-height: 32px;
+    color: #ffbf06;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.main .contacto .contenedor-formulario .formulario p{
+    color: #979797;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.main .contacto .contenedor-formulario .formulario form input[type="text"], .main .contacto .contenedor-formulario .formulario form input[type="email"] {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #979797;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.main .contacto .contenedor-formulario .formulario form textarea{
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    outline: none;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 88px;
+    max-height: 88px;
+    margin-bottom: 10px;
+    color: #979797;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0px;
+}
+
+.main .contacto .contenedor-formulario .formulario form input[type="submit"]{
+    width: 100%;
+    border: none;
+    border: 1px solid #114660;
+    padding: 8px;
+    background: #ffbf06;
+    color: #114660;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0px;
+    cursor: pointer;
+    transition: all .7s ease;
+}
+
+.main .contacto .contenedor-formulario .formulario form input[type="submit"]:hover{
+    color: #ffbf06;
+    background: #114660;
+}
+
+.main .contacto .contenedor-formulario .foto{
+    width: 50%;
+    background-image: url("../img/Proyecto4.jpg");
+    background-size: cover;
+}
+
+/****************validacion de formaulario************/
+
+.main .contacto .contenedor-formulario .formulario form .error{
+    display: none;
+    color: #ff8c8c;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+
+/********************footer**************************/
+
+footer{
+    background: #114660;
+    padding: 54px 0;
+    text-align: center;
+}
+
+footer .copy{
+    color: #ffbf06;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .footer-redes a{
+    display: inline-block;
+    padding: 0 10px;
+    color: #ffbf06;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 2rem;
+    letter-spacing: 0;
+    line-height: 1.5rem;
+    transition: all .3s ease;
+}
+
+footer .footer-redes a:hover{
+    color: #0089E0;
+}
+
+/****medias queries **********/
+
+
+@media screen and (max-width:1100px){
+    /*seccion extra*/
+    .main .seccion-extra .contenedor .foto #despiece{
+        box-shadow: 0px 9px 32px -1px rgba(0,0,0,0.5);
+        transform: translate(10%,10%);
+    }
+}
+
+@media screen and (max-width:1040px){
+    /*nuestroequipo*/
+    .main .nuestro-equipo .titulo-seccion{
+        margin-bottom: 60px;
+    }
+
+    .main .nuestro-equipo .equipo .persona-equipo{
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .main .nuestro-equipo .equipo .persona-equipo .foto{
+        margin-right: 20px;
+    }
+
+    /*****seccion extra*****/
+    .main .seccion-extra .contenedor .info {
+        flex-direction: column-reverse;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main .seccion-extra .contenedor .foto {
+        width: 100%;
+    }
+
+    /***canvas*******/
+    .main .seccion-extra .contenedor .foto #despiece{
+        box-shadow: 0px 9px 32px -1px rgba(0,0,0,0.5);
+        transform: translate(60%,10%);
+    }
+
+}
+
+
+@media screen and (max-width:900px){
+  /*logo del bar*/
+  .logo img {
+    width: 50px;
+  }
+  
+    /*encabezado*/
+  .bar-menu-pc{
+      display: none;
+  }
+
+  .menu-movil{
+    display: block;
+    width: 100%;
+    padding: 5px 18px;
+    background-color: #bd8e03;
+    color: #fff;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    position: fixed;
+  }
+
+  .menu-movil .barra{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .menu-movil .barra a i{
+    font-size: 2rem;
+    color: #f3f4fa;
+   }
+
+   .menu-movil .barra a i:hover{
+      color: #114660; 
+   }
+
+  
+   .menu-movil .menu-principal{
+       text-decoration: none;
+       width: 100%;
+       display: block;
+       position: fixed; /*rompa el flujo del elemento*/
+       top: 83px;
+       left: -100%; /*para esconderlo*/
+       background:#bd8e03;
+       border-bottom: 1px solid rgba(204,204,204,0.5);
+       border-right: 1px solid rgba(204,204,204,0.5);
+       box-shadow: 0px 1px 5px -1px rgba(0,0, 0, a0.4);
+       text-align: center;
+   }
+
+   .menu-movil .menu-principal a{
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    color: #fff;
+    border-bottom: 1px solid rgba(204,204,204,0.5);
+   }
+
+   .menu-movil .menu-principal a:hover{
+       color: #114660;
+   }
+
+   /*evitar aparecer el menu fixed*/
+   .fixed-header{
+       display: none;
+   }
+
+   /*main*/
+   /*Quitamos el efecto del margin top*/
+   .main{
+       margin-top: 0;
+   }
+
+   .main .acerca-de .contenedor .titulo-seccion{
+       width: 100%;
+       text-align: center;
+   }
+   .main .acerca-de .contenedor .texto-acerca-de{
+       width: 100%;
+       text-align: justify;
+   }
+
+
+   /*formualrio contacto*/
+
+   .main .contacto .contenedor-formulario .foto{
+    display: none; 
+   }
+
+   .main .contacto .contenedor .contenedor-formulario .formulario{
+       width: 100%;
+       text-align: center;
+   }
+
+
+   .main .contacto .contenedor-formulario form input[type="text"], 
+   .main .contacto .contenedor-formulario form input[type="email"],
+   .main .contacto .contenedor-formulario form textarea {
+       text-align: center;
+   }
+
+   /***canvas*******/
+   .main .seccion-extra .contenedor .foto #despiece{
+    transform: translate(30%,10%);
+}
+
+}
+
+@media screen and (max-width:680px){
+    .logo img {
+        width: 40px;
+    }
+    /*banner principal*/
+    .main .banner-principal .texto-banner h1{
+        font-size: 6rem;
+    }
+    .main #particles-js {
+        padding: 100px 0;
+    }
+
+    /***canvas*******/
+   .main .seccion-extra .contenedor .foto #despiece{
+    transform: translate(20%,10%);
+}
+
+@media screen and (max-width:550px){
+    /*banner principal*/
+
+    .main .banner-principal .texto-banner h1{
+        font-size: 4rem;
+    }
+
+    /*titulo secciones*/
+    .titulo-seccion h2{
+        font-size: 2.125rem;
+    }
+
+    /*proyectos*/
+    .main .proyectos .galeria-proyectos .proyecto{
+        width: 49%; /*con esto lo convertimos a dos columnas*/
+    }
+
+    /*nuestro equipo*/
+    .main .nuestro-equipo .equipo .persona-equipo{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .main .seccion-extra .contenedor .info .contenido-info{
+        flex-wrap: wrap; /*unh elememto encima del otro*/
+        text-align: center;
+    }
+
+    .main .seccion-extra .contenedor .info .contenido-info .icono-info {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .main .seccion-extra .contenedor .info .contenido-info .icono-info i{
+        font-size: 3.5rem;
+    }
+
+    .main .seccion-extra .contenedor .info .contenido-info .texto-info{
+        left: 0;
+    }
+
+    .main .seccion-extra .contenedor .info .contenido-info .texto-info p{
+        left: 0;
+    }
+
+    .main .seccion-extra .contenedor .info .contenido-info .texto-info h4{
+        font-size: 2rem;
+    }
+
+    .main .seccion-extra .contenedor .info .contenido-info .texto-info:last-child{
+        margin-bottom: 40px;
+    }
+
+    /***canvas*******/
+    .main .seccion-extra .contenedor .foto #despiece{
+        transform: translate(10%,10%);
+    }
+    }
+
+    @media screen and (max-width:550px){
+        .main .seccion-extra .contenedor .foto #despiece{
+            transform: translate(0%,0%);
+        }
+    }
+}
