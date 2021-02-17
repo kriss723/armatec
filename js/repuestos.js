@@ -16,35 +16,9 @@ $(document).ready(function()  {
         }
       
         clickRepuesto (xraton, yraton){
+          $('#distance').slideUp(100);
+          $('#distance').slideDown('slow');
           
-          /***comentario*** */
-          /*
-          const distancia = Math.sqrt(
-            ((xraton - this.xpunto) * (xraton - this.xpunto))
-            +
-            ((yraton - this.ypunto) * (yraton - this.ypunto))
-          );
-            
-          console.log('click en repuestos '+xranton);
-          console.log(distancia)
-           
-          let distanceHint = getDistanceHint(distancia);
-          mensajedistancia.innerHTML = `<h2>${distanceHint}</h2>`;
-          
-          if (distancia < 10) {
-            
-      
-            $('#formC').slideUp(100)
-      
-            mensajedistancia.innerHTML = `<h2> Sigue asi te faltan `+(animales.length - 1)+`</h2>`;
-      
-            animales.splice(index,1);
-            reloadAnimal(); 
-            console.log('el segundo nivel es: '+nivel);
-          
-            
-          }*/
-
           for (let index = 0; index < repuestos.length; index++) {
      
             const distancia = Math.sqrt(
